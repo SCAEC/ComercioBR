@@ -21,7 +21,7 @@ com o seguinte comando:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("fernandobastosneto/comerciobr")
+devtools::install_github("SCAEC/Comercio_BR")
 ```
 
 ## Exemplo
@@ -29,7 +29,7 @@ devtools::install_github("fernandobastosneto/comerciobr")
 Comércio em SH4
 
 ``` r
-library(comerciobr)
+library(Comercio_BR)
 library(magrittr)
 
 comerciobr::sh4_df %>% 
