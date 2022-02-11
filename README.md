@@ -29,7 +29,7 @@ devtools::install_github("SCAEC/comerciobr")
 Comércio em SH4
 
 ``` r
-library(Comercio_BR)
+library(comerciobr)
 library(magrittr)
 
 comerciobr::sh4_df %>% 
