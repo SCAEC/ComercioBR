@@ -7,7 +7,7 @@ if(!fs::dir_exists(here::here("temp/"))) {
   fs::dir_create("temp/filtrados")
 }
 
-anos <- c(2026:2010)
+anos <- c(2022:2010)
 url_exp <- paste0("https://balanca.economia.gov.br/balanca/bd/comexstat-bd/ncm/EXP_")
 url_exp_lista <- purrr::map_chr(anos, ~ paste0(url_exp, .x, ".csv"))
 purrr::walk2(url_exp_lista, anos, ~ httr::GET(.x, config = httr::config(ssl_verifypeer = F),
@@ -56,9 +56,9 @@ dic_sh6_sh2 <- readr::read_csv2(here::here("data-raw", "sh.csv"),
                                 locale = readr::locale(encoding = "ISO-8859-1")) %>%
   dplyr::select(CO_SH6, CO_SH2, NO_SH2_POR)
 
-# dic_sh6_sh2 <- readr::read_csv2(here::here("data-raw", "sh.csv"),
-#                             col_select = c("CO_SH6", "CO_SH2", "NO_SH2_POR"),
-#                             locale = vroom::locale(encoding = "ISO-8859-1"))
+#dic_sh6_sh2 <- readr::read_csv2(here::here("data-raw", "sh.csv"),
+ #                            col_select = c("CO_SH6", "CO_SH2", "NO_SH2_POR"),
+  #                           locale = vroom::locale(encoding = "ISO-8859-1"))
 
 dic_sh6_sh1 <- readr::read_csv2(here::here("data-raw", "sh.csv"),
                                 locale = readr::locale(encoding = "ISO-8859-1")) %>%
